@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>닭 달리기</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+</head>
+<body>
+  <div id="scene"></div>
+
+  <header class="heading">
+    <h1>닭 달리기</h1>
+    <p>W로 가속, S로 감속·후진, A/D로 방향을 틀어요. Shift를 누르면 날개를 퍼덕이며 전력 질주해요.</p>
+  </header>
+
+  <aside class="stats" aria-live="off">
+    <div class="stat-row"><span>속도</span><output id="speed-out">0.0</output><small>m/s</small></div>
+    <div class="meter"><div id="speed-bar"></div></div>
+    <div class="stat-row"><span>거리</span><output id="dist-out">0</output><small>m</small></div>
+  </aside>
+
+  <nav class="toolbar" aria-label="조작">
+    <div class="keys">
+      <button class="key" data-key="KeyW" style="grid-area:w">W</button>
+      <button class="key" data-key="KeyA" style="grid-area:a">A</button>
+      <button class="key" data-key="KeyS" style="grid-area:s">S</button>
+      <button class="key" data-key="KeyD" style="grid-area:d">D</button>
+    </div>
+    <button class="key wide" data-key="ShiftLeft">Shift<br /><span>질주</span></button>
+    <button id="reset">처음으로 (R)</button>
+  </nav>
+
+  <div id="status">불러오는 중…</div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
